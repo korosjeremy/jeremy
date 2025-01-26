@@ -1,0 +1,24 @@
+#include <iostream>
+
+int main() {
+    int overdueDays;
+    double fine = 0;
+
+    // Prompt user for the number of overdue days
+    std::cout << "Enter the number of days the book is overdue: ";
+    std::cin >> overdueDays;
+
+    // Determine the fine based on overdue days
+    if (overdueDays <= 7) {
+        fine = overdueDays * 20;
+    } else if (overdueDays <= 14) {
+        fine = (7 * 20) + ((overdueDays - 7) * 50);
+    } else {
+        fine = (7 * 20) + (7 * 50) + ((overdueDays - 14) * 100);
+    }
+
+    // Display the fine amount
+    std::cout << "The total fine is: Ksh " << fine << std::endl;
+
+    return 0;
+}
